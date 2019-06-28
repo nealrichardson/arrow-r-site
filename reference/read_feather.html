@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read a feather file — read_feather • Arrow R Package</title>
+<title>Read a Feather file — read_feather • Arrow R Package</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Read a feather file — read_feather" />
+<meta property="og:title" content="Read a Feather file — read_feather" />
 
-<meta property="og:description" content="Read a feather file" />
+<meta property="og:description" content="Read a Feather file" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,38 +112,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read a feather file</h1>
+    <h1>Read a Feather file</h1>
     <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/feather.R'><code>R/feather.R</code></a></small>
     <div class="hidden name"><code>read_feather.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Read a feather file</p>
+    <p>Read a Feather file</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>read_feather</span>(<span class='no'>file</span>, <span class='kw'>columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>read_feather</span>(<span class='no'>file</span>, <span class='kw'>col_select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>file</th>
-      <td><p>a arrow::ipc::feather::TableReader or whatever the <code><a href='FeatherTableReader.html'>FeatherTableReader()</a></code> function can handle</p></td>
+      <td><p>an <code>arrow::ipc::feather::TableReader</code> or whatever the <code><a href='FeatherTableReader.html'>FeatherTableReader()</a></code> function can handle</p></td>
     </tr>
     <tr>
-      <th>columns</th>
-      <td><p>names if the columns to read. The default <code>NULL</code> means all columns</p></td>
+      <th>col_select</th>
+      <td><p><a href='https://www.rdocumentation.org/packages/tidyselect/topics/vars_select'>tidy selection</a> of columns to read.</p></td>
     </tr>
     <tr>
       <th>as_tibble</th>
       <td><p>should the <a href='arrow__Table.html'>arrow::Table</a> be converted to a tibble.</p></td>
-    </tr>
-    <tr>
-      <th>use_threads</th>
-      <td><p>Use threads when converting to a tibble.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -150,7 +148,7 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a data frame if <code>as_tibble</code> is <code>TRUE</code> (the default), or a <a href='arrow__Table.html'>arrow::Table</a> otherwise</p>
+    <p>A <code>data.frame</code> if <code>as_tibble</code> is <code>TRUE</code> (the default), or a <a href='arrow__Table.html'>arrow::Table</a> otherwise</p>
     
 
   </div>
@@ -167,7 +165,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

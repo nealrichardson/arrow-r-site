@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -120,14 +123,37 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>read_csv_arrow</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>read_csv_arrow</span>(<span class='no'>file</span>, <span class='kw'>read_options</span> <span class='kw'>=</span> <span class='fu'><a href='csv_read_options.html'>csv_read_options</a></span>(),
+  <span class='kw'>parse_options</span> <span class='kw'>=</span> <span class='fu'><a href='csv_parse_options.html'>csv_parse_options</a></span>(),
+  <span class='kw'>convert_options</span> <span class='kw'>=</span> <span class='fu'><a href='csv_convert_options.html'>csv_convert_options</a></span>(), <span class='kw'>col_select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>Used to construct an arrow::csv::TableReader</p></td>
+      <th>file</th>
+      <td><p>file</p></td>
+    </tr>
+    <tr>
+      <th>read_options</th>
+      <td><p>see <code><a href='csv_read_options.html'>csv_read_options()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>parse_options</th>
+      <td><p>see <code><a href='csv_parse_options.html'>csv_parse_options()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>convert_options</th>
+      <td><p>see <code><a href='csv_convert_options.html'>csv_convert_options()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>col_select</th>
+      <td><p><a href='https://www.rdocumentation.org/packages/tidyselect/topics/vars_select'>tidy selection specification</a> of columns</p></td>
+    </tr>
+    <tr>
+      <th>as_tibble</th>
+      <td><p>Should the <a href='arrow__Table.html'>arrow::Table</a> be converted to a data frame.</p></td>
     </tr>
     </table>
     
@@ -144,7 +170,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read parquet file from disk — read_parquet • Arrow R Package</title>
+<title>Read a Parquet file — read_parquet • Arrow R Package</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="Read parquet file from disk — read_parquet" />
+<meta property="og:title" content="Read a Parquet file — read_parquet" />
 
-<meta property="og:description" content="Read parquet file from disk" />
+<meta property="og:description" content="'Parquet' is a columnar storage file format.
+This function enables you to read Parquet files into R." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,6 +89,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,45 +113,58 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read parquet file from disk</h1>
+    <h1>Read a Parquet file</h1>
     <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/parquet.R'><code>R/parquet.R</code></a></small>
     <div class="hidden name"><code>read_parquet.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Read parquet file from disk</p>
+    <p>'<a href='https://parquet.apache.org/'>Parquet</a>' is a columnar storage file format.
+This function enables you to read Parquet files into R.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>read_parquet</span>(<span class='no'>file</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>read_parquet</span>(<span class='no'>file</span>, <span class='kw'>col_select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>props</span> <span class='kw'>=</span> <span class='fu'><a href='parquet_arrow_reader_properties.html'>parquet_arrow_reader_properties</a></span>(), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>file</th>
-      <td><p>a file path</p></td>
+      <td><p>A character path to a local file, or an Arrow input stream</p></td>
+    </tr>
+    <tr>
+      <th>col_select</th>
+      <td><p>A <a href='https://www.rdocumentation.org/packages/tidyselect/topics/vars_select'>tidy selection specification</a>
+of columns, as used in <code><a href='https://dplyr.tidyverse.org/reference/select.html'>dplyr::select()</a></code>.</p></td>
     </tr>
     <tr>
       <th>as_tibble</th>
-      <td><p>should the <a href='arrow__Table.html'>arrow::Table</a> be converted to a tibble.</p></td>
+      <td><p>Should the function return a <code>data.frame</code> or an
+<a href='arrow__Table.html'>arrow::Table</a>?</p></td>
     </tr>
     <tr>
-      <th>use_threads</th>
-      <td><p>Use threads when converting to a tibble, only relevant if <code>as_tibble</code> is <code>TRUE</code></p></td>
+      <th>props</th>
+      <td><p>reader file properties, as created by <code><a href='parquet_arrow_reader_properties.html'>parquet_arrow_reader_properties()</a></code></p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>currently ignored</p></td>
+      <td><p>additional parameters</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <a href='arrow__Table.html'>arrow::Table</a>, or a data frame if <code>as_tibble</code> is <code>TRUE</code>.</p>
+    <p>A <a href='arrow__Table.html'>arrow::Table</a>, or a <code>data.frame</code> if <code>as_tibble</code> is
+<code>TRUE</code>.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+</div><div class='input'>  <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>read_parquet</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"v0.7.1.parquet"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"arrow"</span>))</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,14 +172,16 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

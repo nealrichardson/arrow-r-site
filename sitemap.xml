@@ -55,6 +55,9 @@
     <loc>https://arrow.apache.org/docs/r//reference/array.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/arrow-package.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/arrow__Array.html</loc>
   </url>
   <url>
@@ -151,6 +154,12 @@
     <loc>https://arrow.apache.org/docs/r//reference/arrow__ipc__RecordBatchWriter.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/arrow__json__TableReader.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/arrow_available.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/buffer.html</loc>
   </url>
   <url>
@@ -184,16 +193,28 @@
     <loc>https://arrow.apache.org/docs/r//reference/field.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/install_arrow.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/mmap_create.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/mmap_open.html</loc>
   </url>
   <url>
-    <loc>https://arrow.apache.org/docs/r//reference/read_csv_arrow.html</loc>
+    <loc>https://arrow.apache.org/docs/r//reference/parquet_arrow_reader_properties.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/parquet_file_reader.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/read_delim_arrow.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/read_feather.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/read_json_arrow.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/read_message.html</loc>
@@ -223,9 +244,6 @@
     <loc>https://arrow.apache.org/docs/r//reference/table.html</loc>
   </url>
   <url>
-    <loc>https://arrow.apache.org/docs/r//reference/threadpool.html</loc>
-  </url>
-  <url>
     <loc>https://arrow.apache.org/docs/r//reference/type.html</loc>
   </url>
   <url>
@@ -233,5 +251,11 @@
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/write_feather.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/write_feather_RecordBatch.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/write_parquet.html</loc>
   </url>
 </urlset>

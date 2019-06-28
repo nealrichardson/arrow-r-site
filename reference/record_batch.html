@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -120,14 +123,18 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>record_batch</span>(<span class='no'>.data</span>)</pre>
+    <pre class="usage"><span class='fu'>record_batch</span>(<span class='no'>...</span>, <span class='kw'>schema</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>.data</th>
-      <td><p>a data frame</p></td>
+      <th>...</th>
+      <td><p>A variable number of arrow::Array</p></td>
+    </tr>
+    <tr>
+      <th>schema</th>
+      <td><p>a arrow::Schema</p></td>
     </tr>
     </table>
     
@@ -150,7 +157,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

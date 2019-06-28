@@ -85,6 +85,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -120,6 +123,26 @@
     <tbody>
       <tr>
         <th colspan="2">
+          <h2 id="section-installation-helpers" class="hasAnchor"><a href="#section-installation-helpers" class="anchor"></a>Installation helpers</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="arrow_available.html">arrow_available()</a></code> </p>
+        </td>
+        <td><p>Is the C++ Arrow library available?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="install_arrow.html">install_arrow()</a></code> </p>
+        </td>
+        <td><p>Help installing the Arrow C++ library</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
           <h2 id="section-reading-and-writing-files" class="hasAnchor"><a href="#section-reading-and-writing-files" class="anchor"></a>Reading and writing files</h2>
           <p class="section-desc"></p>
         </th>
@@ -127,58 +150,75 @@
       <tr>
         
         <td>
-          <p><code><a href="read_csv_arrow.html">read_csv_arrow()</a></code> </p>
+          <p><code><a href="read_delim_arrow.html">read_delim_arrow()</a></code> <code><a href="read_delim_arrow.html">read_csv_arrow()</a></code> <code><a href="read_delim_arrow.html">read_tsv_arrow()</a></code> </p>
         </td>
-        <td><p>Read csv file into an arrow::Table</p></td>
+        <td><p>Read a CSV or other delimited file with Arrow</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="read_json_arrow.html">read_json_arrow()</a></code> </p>
+        </td>
+        <td><p>Read a JSON file</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="read_feather.html">read_feather()</a></code> </p>
         </td>
-        <td><p>Read a feather file</p></td>
+        <td><p>Read a Feather file</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="read_parquet.html">read_parquet()</a></code> </p>
         </td>
-        <td><p>Read parquet file from disk</p></td>
+        <td><p>Read a Parquet file</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="write_arrow.html">write_arrow()</a></code> </p>
         </td>
-        <td><p>serialize an arrow::Table, an arrow::RecordBatch, or a
-data frame to either the streaming format or the binary file format</p></td>
+        <td><p>Write Arrow formatted data</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="write_feather.html">write_feather()</a></code> <code><a href="write_feather.html">write_feather_RecordBatch()</a></code> </p>
+          <p><code><a href="write_feather.html">write_feather()</a></code> </p>
         </td>
-        <td><p>Write data in the feather format</p></td>
+        <td><p>Write data in the Feather format</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="write_parquet.html">write_parquet()</a></code> </p>
+        </td>
+        <td><p>Write Parquet file to disk</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="csv_convert_options.html">csv_convert_options()</a></code> </p>
         </td>
-        <td><p>Conversion Options for the csv reader</p></td>
+        <td><p>Conversion options for the CSV reader</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="csv_parse_options.html">csv_parse_options()</a></code> </p>
+          <p><code><a href="csv_parse_options.html">csv_parse_options()</a></code> <code><a href="csv_parse_options.html">json_parse_options()</a></code> </p>
         </td>
-        <td><p>Parsing options</p></td>
+        <td><p>Parsing options for Arrow file readers</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="csv_read_options.html">csv_read_options()</a></code> </p>
+          <p><code><a href="csv_read_options.html">csv_read_options()</a></code> <code><a href="csv_read_options.html">json_read_options()</a></code> </p>
         </td>
-        <td><p>read options for the csv reader</p></td>
+        <td><p>Read options for the Arrow file readers</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="csv_table_reader.html">csv_table_reader()</a></code> </p>
+          <p><code><a href="csv_table_reader.html">csv_table_reader()</a></code> <code><a href="csv_table_reader.html">json_table_reader()</a></code> </p>
         </td>
-        <td><p>CSV table reader</p></td>
+        <td><p>Arrow CSV and JSON table readers</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="parquet_file_reader.html">parquet_file_reader()</a></code> </p>
+        </td>
+        <td><p>Parquet file reader</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -428,6 +468,12 @@ Array base type. Immutable data array with some logical type and some length.</p
       </tr><tr>
         
         <td>
+          <p><code><a href="arrow__json__TableReader.html">arrow__json__TableReader</a></code> </p>
+        </td>
+        <td><p>class arrow::json::TableReader</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="arrow__ipc__Message.html">arrow__ipc__Message</a></code> </p>
         </td>
         <td><p>class arrow::ipc::Message</p></td>
@@ -514,13 +560,13 @@ Writer for the Arrow streaming binary format</p></td>
         <td>
           <p><code><a href="FeatherTableReader.html">FeatherTableReader()</a></code> </p>
         </td>
-        <td><p>A arrow::ipc::feather::TableReader to read from a file</p></td>
+        <td><p>A <code>arrow::ipc::feather::TableReader</code> to read from a file</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="FeatherTableWriter.html">FeatherTableWriter()</a></code> </p>
         </td>
-        <td><p>Create TableWriter that writes into a stream</p></td>
+        <td><p>Create <code>TableWriter</code> that writes into a stream</p></td>
       </tr><tr>
         
         <td>
@@ -578,12 +624,6 @@ Writer for the Arrow streaming binary format</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="threadpool.html">GetCpuThreadPoolCapacity()</a></code> <code><a href="threadpool.html">SetCpuThreadPoolCapacity()</a></code> </p>
-        </td>
-        <td><p>View and manage the capacity of the global thread pool</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="cast_options.html">cast_options()</a></code> </p>
         </td>
         <td><p>Cast options</p></td>
@@ -619,6 +659,7 @@ Writer for the Arrow streaming binary format</p></td>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#section-installation-helpers">Installation helpers</a></li>
       <li><a href="#section-reading-and-writing-files">Reading and writing files</a></li>
       <li><a href="#section-arrow-data-containers">Arrow data containers</a></li>
       <li><a href="#section-r-classes">R6 classes</a></li>
@@ -629,7 +670,7 @@ Writer for the Arrow streaming binary format</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

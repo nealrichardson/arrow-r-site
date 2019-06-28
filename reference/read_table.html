@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -122,7 +125,7 @@
 
     <pre class="usage"><span class='fu'>read_table</span>(<span class='no'>stream</span>)
 
-<span class='fu'>read_arrow</span>(<span class='no'>stream</span>, <span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>read_arrow</span>(<span class='no'>stream</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,10 +145,6 @@ to process it.</p></li>
 <li><p>a raw vector: read using a <a href='arrow__ipc__RecordBatchStreamReader.html'>arrow::ipc::RecordBatchStreamReader</a></p></li>
 </ul></td>
     </tr>
-    <tr>
-      <th>use_threads</th>
-      <td><p>Use threads when converting to a tibble</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -153,7 +152,7 @@ to process it.</p></li>
     
 <ul>
 <li><p><code>read_table</code> returns an <a href='arrow__Table.html'>arrow::Table</a></p></li>
-<li><p><code>read_arrow</code> returns a <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble::tibble()</a></code></p></li>
+<li><p><code>read_arrow</code> returns a <code>data.frame</code></p></li>
 </ul>
 
     
@@ -180,7 +179,7 @@ flexibility. The other methods are for convenience.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parsing options — csv_parse_options • Arrow R Package</title>
+<title>Parsing options for Arrow file readers — csv_parse_options • Arrow R Package</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Parsing options — csv_parse_options" />
+<meta property="og:title" content="Parsing options for Arrow file readers — csv_parse_options" />
 
-<meta property="og:description" content="Parsing options" />
+<meta property="og:description" content="Parsing options for Arrow file readers" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,21 +112,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Parsing options</h1>
-    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/csv.R'><code>R/csv.R</code></a></small>
+    <h1>Parsing options for Arrow file readers</h1>
+    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/csv.R'><code>R/csv.R</code></a>, <a href='https://github.com/apache/arrow/blob/master/R/json.R'><code>R/json.R</code></a></small>
     <div class="hidden name"><code>csv_parse_options.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Parsing options</p>
+    <p>Parsing options for Arrow file readers</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>csv_parse_options</span>(<span class='kw'>delimiter</span> <span class='kw'>=</span> <span class='st'>","</span>, <span class='kw'>quoting</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>quote_char</span> <span class='kw'>=</span> <span class='st'>"\""</span>, <span class='kw'>double_quote</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>escaping</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>escape_char</span> <span class='kw'>=</span> <span class='st'>"\\"</span>, <span class='kw'>newlines_in_values</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>ignore_empty_lines</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>header_rows</span> <span class='kw'>=</span> <span class='fl'>1L</span>)</pre>
+  <span class='kw'>ignore_empty_lines</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>header_rows</span> <span class='kw'>=</span> <span class='fl'>1L</span>)
+
+<span class='fu'>json_parse_options</span>(<span class='kw'>newlines_in_values</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,7 +184,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">

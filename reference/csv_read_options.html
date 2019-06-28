@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>read options for the csv reader — csv_read_options • Arrow R Package</title>
+<title>Read options for the Arrow file readers — csv_read_options • Arrow R Package</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="read options for the csv reader — csv_read_options" />
+<meta property="og:title" content="Read options for the Arrow file readers — csv_read_options" />
 
-<meta property="og:description" content="read options for the csv reader" />
+<meta property="og:description" content="Read options for the Arrow file readers" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,6 +88,9 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,29 +112,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>read options for the csv reader</h1>
-    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/csv.R'><code>R/csv.R</code></a></small>
+    <h1>Read options for the Arrow file readers</h1>
+    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/csv.R'><code>R/csv.R</code></a>, <a href='https://github.com/apache/arrow/blob/master/R/json.R'><code>R/json.R</code></a></small>
     <div class="hidden name"><code>csv_read_options.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>read options for the csv reader</p>
+    <p>Read options for the Arrow file readers</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>csv_read_options</span>(<span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>)</pre>
+    <pre class="usage"><span class='fu'>csv_read_options</span>(<span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>)
+
+<span class='fu'>json_read_options</span>(<span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>use_threads</th>
-      <td><p>Whether to use the global CPU thread pool</p></td>
+      <th>block_size</th>
+      <td><p>Block size we request from the IO layer; also determines the size of chunks when use_threads is <code>TRUE</code>. NB: if false, JSON input must end with an empty line</p></td>
     </tr>
     <tr>
-      <th>block_size</th>
-      <td><p>Block size we request from the IO layer; also determines the size of chunks when use_threads is <code>TRUE</code></p></td>
+      <th>use_threads</th>
+      <td><p>Whether to use the global CPU thread pool</p></td>
     </tr>
     </table>
     
@@ -148,7 +153,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Romain François, Jeroen Ooms, Apache Arrow.</p>
+  <p>Developed by Romain François, Jeroen Ooms, Neal Richardson, Apache Arrow.</p>
 </div>
 
 <div class="pkgdown">
