@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read a Feather file — read_feather • Arrow R Package</title>
+<title>Apache Arrow data types — data-type • Arrow R Package</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,10 @@
 
 
 
-<meta property="og:title" content="Read a Feather file — read_feather" />
-<meta property="og:description" content="Read a Feather file" />
+<meta property="og:title" content="Apache Arrow data types — data-type" />
+<meta property="og:description" content="These functions create type objects corresponding to Arrow types. Use them
+when defining a schema() or as inputs to other types, like struct. Most
+of these functions don't take arguments, but a few do." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -121,66 +123,136 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read a Feather file</h1>
-    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/feather.R'><code>R/feather.R</code></a></small>
-    <div class="hidden name"><code>read_feather.Rd</code></div>
+    <h1>Apache Arrow data types</h1>
+    <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/type.R'><code>R/type.R</code></a>, <a href='https://github.com/apache/arrow/blob/master/R/list.R'><code>R/list.R</code></a>, <a href='https://github.com/apache/arrow/blob/master/R/struct.R'><code>R/struct.R</code></a></small>
+    <div class="hidden name"><code>data-type.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Read a Feather file</p>
+    <p>These functions create type objects corresponding to Arrow types. Use them
+when defining a <code><a href='Schema.html'>schema()</a></code> or as inputs to other types, like <code>struct</code>. Most
+of these functions don't take arguments, but a few do.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_feather</span>(<span class='no'>file</span>, <span class='kw'>col_select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>int8</span>()
+
+<span class='fu'>int16</span>()
+
+<span class='fu'>int32</span>()
+
+<span class='fu'>int64</span>()
+
+<span class='fu'>uint8</span>()
+
+<span class='fu'>uint16</span>()
+
+<span class='fu'>uint32</span>()
+
+<span class='fu'>uint64</span>()
+
+<span class='fu'>float16</span>()
+
+<span class='fu'>halffloat</span>()
+
+<span class='fu'>float32</span>()
+
+<span class='fu'>float</span>()
+
+<span class='fu'>float64</span>()
+
+<span class='fu'>boolean</span>()
+
+<span class='fu'>bool</span>()
+
+<span class='fu'>utf8</span>()
+
+<span class='fu'>string</span>()
+
+<span class='fu'>date32</span>()
+
+<span class='fu'>date64</span>()
+
+<span class='fu'>time32</span>(<span class='kw'>unit</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ms"</span>, <span class='st'>"s"</span>))
+
+<span class='fu'>time64</span>(<span class='kw'>unit</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ns"</span>, <span class='st'>"us"</span>))
+
+<span class='fu'>null</span>()
+
+<span class='fu'>timestamp</span>(<span class='kw'>unit</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"s"</span>, <span class='st'>"ms"</span>, <span class='st'>"us"</span>, <span class='st'>"ns"</span>), <span class='no'>timezone</span>)
+
+<span class='fu'>decimal</span>(<span class='no'>precision</span>, <span class='no'>scale</span>)
+
+<span class='fu'>list_of</span>(<span class='no'>type</span>)
+
+<span class='fu'>struct</span>(<span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>file</th>
-      <td><p>A character file path, a raw vector, or <code>InputStream</code>, passed to
-<code>FeatherTableReader$create()</code>.</p></td>
+      <th>unit</th>
+      <td><p>For time/timestamp types, the time unit. <code>time32()</code> can take
+either "s" or "ms", while <code>time64()</code> can be "us" or "ns". <code>timestamp()</code> can
+take any of those four values.</p></td>
     </tr>
     <tr>
-      <th>col_select</th>
-      <td><p>A character vector of column names to keep, as in the
-"select" argument to <code>data.table::fread()</code>, or a
-<a href='https://rdrr.io/pkg/tidyselect/man/vars_select.html'>tidy selection specification</a>
-of columns, as used in <code><a href='https://dplyr.tidyverse.org/reference/select.html'>dplyr::select()</a></code>.</p></td>
+      <th>timezone</th>
+      <td><p>For <code>timestamp()</code>, an optional time zone string.</p></td>
     </tr>
     <tr>
-      <th>as_tibble</th>
-      <td><p>Should the function return a <code>data.frame</code> or an
-<a href='Table.html'>arrow::Table</a>?</p></td>
+      <th>precision</th>
+      <td><p>For <code>decimal()</code>, precision</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>For <code>decimal()</code>, scale</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>For <code>list_of()</code>, a data type to make a list-of-type</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>additional parameters</p></td>
+      <td><p>For <code>struct()</code>, a named list of types to define the struct columns</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> if <code>as_tibble</code> is <code>TRUE</code> (the default), or an
-<a href='Table.html'>arrow::Table</a> otherwise</p>
+    <p>An Arrow type object inheriting from DataType.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>A few functions have aliases:</p><ul>
+<li><p><code>utf8()</code> and <code>string()</code></p></li>
+<li><p><code>float16()</code> and <code>halffloat()</code></p></li>
+<li><p><code>float32()</code> and <code>float()</code></p></li>
+<li><p><code>bool()</code> and <code>boolean()</code></p></li>
+<li><p>Called from <code><a href='Schema.html'>schema()</a></code> or <code>struct()</code>, <code><a href='https://rdrr.io/r/base/double.html'>double()</a></code> also is supported as a
+way of creating a <code>float64()</code></p></li>
+</ul>
+
+<p><code>date32()</code> creates a datetime type with a "day" unit, like the R <code>Date</code>
+class. <code>date64()</code> has a "ms" unit.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='dictionary.html'>dictionary()</a></code> for creating a dictionary (factor-like) type.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>({
-  <span class='no'>tf</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>()
-  <span class='fu'><a href='https://rdrr.io/r/base/on.exit.html'>on.exit</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span>(<span class='no'>tf</span>))
-  <span class='fu'><a href='write_feather.html'>write_feather</a></span>(<span class='no'>iris</span>, <span class='no'>tf</span>)
-  <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>read_feather</span>(<span class='no'>tf</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>df</span>)
-  <span class='co'># Can select columns</span>
-  <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>read_feather</span>(<span class='no'>tf</span>, <span class='kw'>col_select</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/tidyselect/man/select_helpers.html'>starts_with</a></span>(<span class='st'>"Sepal"</span>))
-})
-<span class='co'># }</span></div></pre>
+<span class='fu'>bool</span>()</div><div class='output co'>#&gt; Boolean 
+#&gt; bool </div><div class='input'><span class='fu'>struct</span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'>int32</span>(), <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/double.html'>double</a></span>())</div><div class='output co'>#&gt; StructType 
+#&gt; struct&lt;a: int32, b: double&gt; </div><div class='input'><span class='fu'>timestamp</span>(<span class='st'>"ms"</span>, <span class='kw'>timezone</span> <span class='kw'>=</span> <span class='st'>"CEST"</span>)</div><div class='output co'>#&gt; Timestamp 
+#&gt; timestamp[ms, tz=CEST] </div><div class='input'><span class='fu'>time64</span>(<span class='st'>"ns"</span>)</div><div class='output co'>#&gt; Time64 
+#&gt; time64[ns] </div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

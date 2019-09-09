@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Write Parquet file to disk — write_parquet • Arrow R Package</title>
+<title>ParquetFileReader class — ParquetFileReader • Arrow R Package</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,8 @@
 
 
 
-<meta property="og:title" content="Write Parquet file to disk — write_parquet" />
-<meta property="og:description" content="Parquet is a columnar storage file format.
-This function enables you to write Parquet files from R." />
+<meta property="og:title" content="ParquetFileReader class — ParquetFileReader" />
+<meta property="og:description" content="This class enables you to interact with Parquet files." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -122,43 +121,75 @@ This function enables you to write Parquet files from R." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Write Parquet file to disk</h1>
+    <h1>ParquetFileReader class</h1>
     <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/parquet.R'><code>R/parquet.R</code></a></small>
-    <div class="hidden name"><code>write_parquet.Rd</code></div>
+    <div class="hidden name"><code>ParquetFileReader.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://parquet.apache.org/'>Parquet</a> is a columnar storage file format.
-This function enables you to write Parquet files from R.</p>
+    <p>This class enables you to interact with Parquet files.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>write_parquet</span>(<span class='no'>table</span>, <span class='no'>file</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>table</th>
-      <td><p>An <a href='Table.html'>arrow::Table</a>, or an object convertible to it</p></td>
-    </tr>
-    <tr>
-      <th>file</th>
-      <td><p>a file path</p></td>
-    </tr>
-    </table>
+
+    <h2 class="hasAnchor" id="factory"><a class="anchor" href="#factory"></a>Factory</h2>
+
+    
+
+
+<p>The <code>ParquetFileReader$create()</code> factory method instantiates the object and
+takes the following arguments:</p><ul>
+<li><p><code>file</code> A character file name, raw vector, or Arrow file connection object
+(e.g. <code>RandomAccessFile</code>).</p></li>
+<li><p><code>props</code> Optional <a href='ParquetReaderProperties.html'>ParquetReaderProperties</a></p></li>
+<li><p><code>mmap</code> Logical: whether to memory-map the file (default <code>TRUE</code>)</p></li>
+<li><p><code>...</code> Additional arguments, currently ignored</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
+
+    
+
+<ul>
+<li><p><code>$ReadTable(col_select)</code>: get an <code><a href='Table.html'>arrow::Table</a></code> from the file, possibly
+with columns filtered by a character vector of column names or a
+<code>tidyselect</code> specification.</p></li>
+<li><p><code>$GetSchema()</code>: get the <code><a href='Schema.html'>arrow::Schema</a></code> of the data in the file</p></li>
+</ul>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='no'>tf</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>(<span class='kw'>fileext</span> <span class='kw'>=</span> <span class='st'>".parquet"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/on.exit.html'>on.exit</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span>(<span class='no'>tf</span>))
-<span class='fu'>write_parquet</span>(<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>), <span class='no'>tf</span>)
-<span class='co'># }</span></div></pre>
+<span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"v0.7.1.parquet"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"arrow"</span>)
+<span class='no'>pq</span> <span class='kw'>&lt;-</span> <span class='no'>ParquetFileReader</span>$<span class='fu'>create</span>(<span class='no'>f</span>)
+<span class='no'>pq</span>$<span class='fu'>GetSchema</span>()</div><div class='output co'>#&gt; Schema 
+#&gt; carat: double
+#&gt; cut: string
+#&gt; color: string
+#&gt; clarity: string
+#&gt; depth: double
+#&gt; table: double
+#&gt; price: int64
+#&gt; x: double
+#&gt; y: double
+#&gt; z: double
+#&gt; __index_level_0__: int64
+#&gt; -- metadata --
+#&gt; pandas: {"index_columns": ["__index_level_0__"], "column_indexes": [{"name": null, "pandas_type": "string", "numpy_type": "object", "metadata": null}], "columns": [{"name": "carat", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "cut", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "color", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "clarity", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "depth", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "table", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "price", "pandas_type": "int64", "numpy_type": "int64", "metadata": null}, {"name": "x", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "y", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "z", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "__index_level_0__", "pandas_type": "int64", "numpy_type": "int64", "metadata": null}], "pandas_version": "0.20.1"} </div><div class='input'><span class='no'>tab</span> <span class='kw'>&lt;-</span> <span class='no'>pq</span>$<span class='fu'>ReadTable</span>(<span class='fu'><a href='https://rdrr.io/pkg/tidyselect/man/select_helpers.html'>starts_with</a></span>(<span class='st'>"c"</span>))
+<span class='no'>tab</span>$<span class='no'>schema</span></div><div class='output co'>#&gt; Schema 
+#&gt; carat: double
+#&gt; cut: string
+#&gt; color: string
+#&gt; clarity: string
+#&gt; -- metadata --
+#&gt; pandas: {"index_columns": ["__index_level_0__"], "column_indexes": [{"name": null, "pandas_type": "string", "numpy_type": "object", "metadata": null}], "columns": [{"name": "carat", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "cut", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "color", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "clarity", "pandas_type": "unicode", "numpy_type": "object", "metadata": null}, {"name": "depth", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "table", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "price", "pandas_type": "int64", "numpy_type": "int64", "metadata": null}, {"name": "x", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "y", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "z", "pandas_type": "float64", "numpy_type": "float64", "metadata": null}, {"name": "__index_level_0__", "pandas_type": "int64", "numpy_type": "int64", "metadata": null}], "pandas_version": "0.20.1"} </div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#factory">Factory</a></li>
+      <li><a href="#methods">Methods</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
