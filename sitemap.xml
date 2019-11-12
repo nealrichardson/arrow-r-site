@@ -7,10 +7,31 @@
     <loc>https://arrow.apache.org/docs/r//reference/ArrayData.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/ChunkedArray.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/Codec.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/CsvReadOptions.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/CsvTableReader.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/DataSource.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/DataType.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/Dataset.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/DictionaryType.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/Expression.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/FeatherTableReader.html</loc>
@@ -22,13 +43,16 @@
     <loc>https://arrow.apache.org/docs/r//reference/Field.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/FileStats.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/FileSystem.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/FixedWidthType.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/InputStream.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/JsonTableReader.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/MemoryPool.html</loc>
@@ -49,6 +73,9 @@
     <loc>https://arrow.apache.org/docs/r//reference/ParquetReaderProperties.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/PartitionScheme.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/RecordBatch.html</loc>
   </url>
   <url>
@@ -58,7 +85,13 @@
     <loc>https://arrow.apache.org/docs/r//reference/RecordBatchWriter.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/Scanner.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/Schema.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/Selector.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/Table.html</loc>
@@ -79,28 +112,7 @@
     <loc>https://arrow.apache.org/docs/r//reference/cast_options.html</loc>
   </url>
   <url>
-    <loc>https://arrow.apache.org/docs/r//reference/chunked-array.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/chunked_array.html</loc>
-  </url>
-  <url>
     <loc>https://arrow.apache.org/docs/r//reference/compression.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/compression_codec.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/csv_convert_options.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/csv_parse_options.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/csv_read_options.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/csv_table_reader.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/data-type.html</loc>
@@ -115,6 +127,9 @@
     <loc>https://arrow.apache.org/docs/r//reference/enums.html</loc>
   </url>
   <url>
+    <loc>https://arrow.apache.org/docs/r//reference/hive_partition.html</loc>
+  </url>
+  <url>
     <loc>https://arrow.apache.org/docs/r//reference/install_arrow.html</loc>
   </url>
   <url>
@@ -125,6 +140,9 @@
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/mmap_open.html</loc>
+  </url>
+  <url>
+    <loc>https://arrow.apache.org/docs/r//reference/open_dataset.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/read_delim_arrow.html</loc>
@@ -149,9 +167,6 @@
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/read_table.html</loc>
-  </url>
-  <url>
-    <loc>https://arrow.apache.org/docs/r//reference/record_batch.html</loc>
   </url>
   <url>
     <loc>https://arrow.apache.org/docs/r//reference/reexports.html</loc>

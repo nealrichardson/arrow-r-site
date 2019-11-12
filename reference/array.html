@@ -6,9 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>class Array
-
-Array base type. Immutable data array with some logical type and some length. — array • Arrow R Package</title>
+<title>Array class — array • Arrow R Package</title>
 
 
 <!-- jquery -->
@@ -20,8 +18,8 @@ Array base type. Immutable data array with some logical type and some length. �
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -37,11 +35,9 @@ Array base type. Immutable data array with some logical type and some length. �
 
 
 
-<meta property="og:title" content="class Array
-
-Array base type. Immutable data array with some logical type and some length. — array" />
-<meta property="og:description" content="class Array
-Array base type. Immutable data array with some logical type and some length." />
+<meta property="og:title" content="Array class — array" />
+<meta property="og:description" content="Array base type. Immutable data array with some logical type
+and some length." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -84,17 +80,14 @@ Array base type. Immutable data array with some logical type and some length." /
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Arrow R Package</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.14.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
+  <a href="https://arrow.apache.org/">❯❯❯</a>
 </li>
 <li>
   <a href="../articles/arrow.html">Get started</a>
@@ -104,6 +97,36 @@ Array base type. Immutable data array with some logical type and some length." /
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Project docs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://arrow.apache.org/docs/format/README.html">Specification</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/c_glib">C GLib</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/cpp">C++</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/java">Java</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/js">JavaScript</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/python">Python</a>
+    </li>
+    <li>
+      <a href="../index.html">R</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -126,38 +149,34 @@ Array base type. Immutable data array with some logical type and some length." /
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>class Array
-
-Array base type. Immutable data array with some logical type and some length.</h1>
+    <h1>Array class</h1>
     <small class="dont-index">Source: <a href='https://github.com/apache/arrow/blob/master/R/array.R'><code>R/array.R</code></a></small>
     <div class="hidden name"><code>array.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>class Array</p>
-<p>Array base type. Immutable data array with some logical type and some length.</p>
+    <p>Array base type. Immutable data array with some logical type
+and some length.</p>
     </div>
 
 
+
+    <h2 class="hasAnchor" id="factory"><a class="anchor" href="#factory"></a>Factory</h2>
+
+    
+
+<p>The <code>Array$create()</code> factory method instantiates an <code>Array</code> and
+takes the following arguments:</p><ul>
+<li><p><code>x</code>: an R vector, list, or <code>data.frame</code></p></li>
+<li><p><code>type</code>: an optional <a href='data-type.html'>data type</a> for <code>x</code>. If omitted, the type
+will be inferred from the data.</p></li>
+</ul>
 
     <h2 class="hasAnchor" id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
 
     
 <pre>a &lt;- Array$create(x)
-
-a$IsNull(i)
-a$IsValid(i)
-a$length() or length(a)
-a$offset()
-a$null_count()
-a$type()
-a$type_id()
-a$Equals(b)
-a$ApproxEquals(b)
-a$as_vector()
-a$ToString()
-a$Slice(offset, length = NULL)
-a$RangeEquals(other, start_idx, end_idx, other_start_idx)
+length(a)
 
 print(a)
 a == a
@@ -180,16 +199,174 @@ a == a
 <li><p><code>$data()</code>: return the underlying <a href='ArrayData.html'>ArrayData</a></p></li>
 <li><p><code>$as_vector()</code>: convert to an R vector</p></li>
 <li><p><code>$ToString()</code>: string representation of the array</p></li>
-<li><p><code>$Slice(offset, length = NULL)</code> : Construct a zero-copy slice of the array with the indicated offset and length. If length is <code>NULL</code>, the slice goes until the end of the array.</p></li>
+<li><p><code>$Slice(offset, length = NULL)</code>: Construct a zero-copy slice of the array
+with the indicated offset and length. If length is <code>NULL</code>, the slice goes
+until the end of the array.</p></li>
+<li><p><code>$Take(i)</code>: return an <code>Array</code> with values at positions given by integers
+(R vector or Array Array) <code>i</code>.</p></li>
+<li><p><code>$Filter(i)</code>: return an <code>Array</code> with values at positions where logical
+vector (or Arrow boolean Array) <code>i</code> is <code>TRUE</code>.</p></li>
 <li><p><code>$RangeEquals(other, start_idx, end_idx, other_start_idx)</code> :</p></li>
+<li><p><code>$cast(target_type, safe = TRUE, options = cast_options(safe))</code>: Alter the
+data in the array to change its type.</p></li>
+<li><p><code>$View(type)</code>: Construct a zero-copy view of this array with the given type.</p></li>
+<li><p><code>$Validate()</code> : Perform any validation checks to determine obvious inconsistencies
+within the array's internal data. This can be an expensive check, potentially <code>O(length)</code></p></li>
 </ul>
+
+    <h2 class="hasAnchor" id="super-class"><a class="anchor" href="#super-class"></a>Super class</h2>
+
+    <p><code>arrow::Object</code> -&gt; <code>Array</code></p>
+    <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
+
+    
+<h3>Public methods</h3>
+
+<ul>
+<li><p><a href='#method-IsNull'><code>Array$IsNull()</code></a></p></li>
+<li><p><a href='#method-IsValid'><code>Array$IsValid()</code></a></p></li>
+<li><p><a href='#method-length'><code>Array$length()</code></a></p></li>
+<li><p><a href='#method-type_id'><code>Array$type_id()</code></a></p></li>
+<li><p><a href='#method-Equals'><code>Array$Equals()</code></a></p></li>
+<li><p><a href='#method-ApproxEquals'><code>Array$ApproxEquals()</code></a></p></li>
+<li><p><a href='#method-data'><code>Array$data()</code></a></p></li>
+<li><p><a href='#method-as_vector'><code>Array$as_vector()</code></a></p></li>
+<li><p><a href='#method-ToString'><code>Array$ToString()</code></a></p></li>
+<li><p><a href='#method-Slice'><code>Array$Slice()</code></a></p></li>
+<li><p><a href='#method-Take'><code>Array$Take()</code></a></p></li>
+<li><p><a href='#method-Filter'><code>Array$Filter()</code></a></p></li>
+<li><p><a href='#method-RangeEquals'><code>Array$RangeEquals()</code></a></p></li>
+<li><p><a href='#method-cast'><code>Array$cast()</code></a></p></li>
+<li><p><a href='#method-View'><code>Array$View()</code></a></p></li>
+<li><p><a href='#method-Validate'><code>Array$Validate()</code></a></p></li>
+<li><p><a href='#method-clone'><code>Array$clone()</code></a></p></li>
+</ul>
+<p><details open ><summary>Inherited methods</summary>
+<ul>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="initialize"><a href='../../arrow/html/Object.html#method-initialize'><code>arrow::Object$initialize()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="pointer"><a href='../../arrow/html/Object.html#method-pointer'><code>arrow::Object$pointer()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="print"><a href='../../arrow/html/Object.html#method-print'><code>arrow::Object$print()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="set_pointer"><a href='../../arrow/html/Object.html#method-set_pointer'><code>arrow::Object$set_pointer()</code></a></span></p></li>
+</ul>
+</details>
+
+<hr>
+<a id="method-IsNull"></a></p><h3>Method <code>IsNull()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$IsNull(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-IsValid"></a></p><h3>Method <code>IsValid()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$IsValid(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-length"></a></p><h3>Method <code><a href='https://rdrr.io/r/base/length.html'>length()</a></code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$length()</pre><p></div></p>
+
+<p><hr>
+<a id="method-type_id"></a></p><h3>Method <code>type_id()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$type_id()</pre><p></div></p>
+
+<p><hr>
+<a id="method-Equals"></a></p><h3>Method <code>Equals()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$Equals(other)</pre><p></div></p>
+
+<p><hr>
+<a id="method-ApproxEquals"></a></p><h3>Method <code>ApproxEquals()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$ApproxEquals(other)</pre><p></div></p>
+
+<p><hr>
+<a id="method-data"></a></p><h3>Method <code><a href='https://rdrr.io/r/utils/data.html'>data()</a></code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$data()</pre><p></div></p>
+
+<p><hr>
+<a id="method-as_vector"></a></p><h3>Method <code>as_vector()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$as_vector()</pre><p></div></p>
+
+<p><hr>
+<a id="method-ToString"></a></p><h3>Method <code>ToString()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$ToString()</pre><p></div></p>
+
+<p><hr>
+<a id="method-Slice"></a></p><h3>Method <code>Slice()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$Slice(offset, length = NULL)</pre><p></div></p>
+
+<p><hr>
+<a id="method-Take"></a></p><h3>Method <code>Take()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$Take(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-Filter"></a></p><h3>Method <code><a href='https://rdrr.io/r/base/funprog.html'>Filter()</a></code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$Filter(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-RangeEquals"></a></p><h3>Method <code>RangeEquals()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$RangeEquals(other, start_idx, end_idx, other_start_idx)</pre><p></div></p>
+
+<p><hr>
+<a id="method-cast"></a></p><h3>Method <code>cast()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$cast(target_type, safe = TRUE, options = cast_options(safe))</pre><p></div></p>
+
+<p><hr>
+<a id="method-View"></a></p><h3>Method <code><a href='https://rdrr.io/r/utils/View.html'>View()</a></code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$View(type)</pre><p></div></p>
+
+<p><hr>
+<a id="method-Validate"></a></p><h3>Method <code>Validate()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>Array$Validate()</pre><p></div></p>
+
+<p><hr>
+<a id="method-clone"></a></p><h3>Method <code>clone()</code></h3>
+<p>The objects of this class are cloneable with this method.</p><h3>Usage</h3>
+<p><div class="r"></p><pre>Array$clone(deep = FALSE)</pre><p></div></p>
+
+<h3>Arguments</h3>
+<p><div class="arguments"></p><dl class='dl-horizontal'>
+<dt><code>deep</code></dt><dd><p>Whether to make a deep clone.</p></dd>
+
+</dl><p></div></p>
+
 
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#factory">Factory</a></li>
       <li><a href="#usage">Usage</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#super-class">Super class</a></li>
       <li><a href="#methods">Methods</a></li>
     </ul>
 
@@ -203,7 +380,7 @@ a == a
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

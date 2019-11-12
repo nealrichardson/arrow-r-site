@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -81,17 +81,14 @@ make an arrow::Table. See its usage in read_feather()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Arrow R Package</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.14.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
+  <a href="https://arrow.apache.org/">❯❯❯</a>
 </li>
 <li>
   <a href="../articles/arrow.html">Get started</a>
@@ -101,6 +98,36 @@ make an arrow::Table. See its usage in read_feather()." />
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Project docs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://arrow.apache.org/docs/format/README.html">Specification</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/c_glib">C GLib</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/cpp">C++</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/java">Java</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/js">JavaScript</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/python">Python</a>
+    </li>
+    <li>
+      <a href="../index.html">R</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -164,12 +191,102 @@ takes the following arguments:</p><ul>
 <li><p><code>$Read(columns)</code></p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="super-class"><a class="anchor" href="#super-class"></a>Super class</h2>
+
+    <p><code>arrow::Object</code> -&gt; <code>FeatherTableReader</code></p>
+    <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
+
+    
+<h3>Public methods</h3>
+
+<ul>
+<li><p><a href='#method-GetDescription'><code>FeatherTableReader$GetDescription()</code></a></p></li>
+<li><p><a href='#method-HasDescription'><code>FeatherTableReader$HasDescription()</code></a></p></li>
+<li><p><a href='#method-version'><code>FeatherTableReader$version()</code></a></p></li>
+<li><p><a href='#method-num_rows'><code>FeatherTableReader$num_rows()</code></a></p></li>
+<li><p><a href='#method-num_columns'><code>FeatherTableReader$num_columns()</code></a></p></li>
+<li><p><a href='#method-GetColumnName'><code>FeatherTableReader$GetColumnName()</code></a></p></li>
+<li><p><a href='#method-GetColumn'><code>FeatherTableReader$GetColumn()</code></a></p></li>
+<li><p><a href='#method-Read'><code>FeatherTableReader$Read()</code></a></p></li>
+<li><p><a href='#method-clone'><code>FeatherTableReader$clone()</code></a></p></li>
+</ul>
+<p><details open ><summary>Inherited methods</summary>
+<ul>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="initialize"><a href='../../arrow/html/Object.html#method-initialize'><code>arrow::Object$initialize()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="pointer"><a href='../../arrow/html/Object.html#method-pointer'><code>arrow::Object$pointer()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="print"><a href='../../arrow/html/Object.html#method-print'><code>arrow::Object$print()</code></a></span></p></li>
+<li><p><span class="pkg-link" data-pkg="arrow" data-topic="Object" data-id="set_pointer"><a href='../../arrow/html/Object.html#method-set_pointer'><code>arrow::Object$set_pointer()</code></a></span></p></li>
+</ul>
+</details>
+
+<hr>
+<a id="method-GetDescription"></a></p><h3>Method <code>GetDescription()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$GetDescription()</pre><p></div></p>
+
+<p><hr>
+<a id="method-HasDescription"></a></p><h3>Method <code>HasDescription()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$HasDescription()</pre><p></div></p>
+
+<p><hr>
+<a id="method-version"></a></p><h3>Method <code><a href='https://rdrr.io/r/base/Version.html'>version()</a></code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$version()</pre><p></div></p>
+
+<p><hr>
+<a id="method-num_rows"></a></p><h3>Method <code>num_rows()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$num_rows()</pre><p></div></p>
+
+<p><hr>
+<a id="method-num_columns"></a></p><h3>Method <code>num_columns()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$num_columns()</pre><p></div></p>
+
+<p><hr>
+<a id="method-GetColumnName"></a></p><h3>Method <code>GetColumnName()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$GetColumnName(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-GetColumn"></a></p><h3>Method <code>GetColumn()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$GetColumn(i)</pre><p></div></p>
+
+<p><hr>
+<a id="method-Read"></a></p><h3>Method <code>Read()</code></h3>
+
+<h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$Read(columns)</pre><p></div></p>
+
+<p><hr>
+<a id="method-clone"></a></p><h3>Method <code>clone()</code></h3>
+<p>The objects of this class are cloneable with this method.</p><h3>Usage</h3>
+<p><div class="r"></p><pre>FeatherTableReader$clone(deep = FALSE)</pre><p></div></p>
+
+<h3>Arguments</h3>
+<p><div class="arguments"></p><dl class='dl-horizontal'>
+<dt><code>deep</code></dt><dd><p>Whether to make a deep clone.</p></dd>
+
+</dl><p></div></p>
+
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#factory">Factory</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#super-class">Super class</a></li>
       <li><a href="#methods">Methods</a></li>
     </ul>
 
@@ -183,7 +300,7 @@ takes the following arguments:</p><ul>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

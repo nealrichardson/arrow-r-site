@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -77,17 +77,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Arrow R Package</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.14.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.15.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
+  <a href="https://arrow.apache.org/">❯❯❯</a>
 </li>
 <li>
   <a href="../articles/arrow.html">Get started</a>
@@ -97,6 +94,36 @@
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Project docs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://arrow.apache.org/docs/format/README.html">Specification</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/c_glib">C GLib</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/cpp">C++</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/java">Java</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/js">JavaScript</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/python">Python</a>
+    </li>
+    <li>
+      <a href="../index.html">R</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -216,30 +243,6 @@
       <tr>
         
         <td>
-          <p><code><a href="csv_convert_options.html">csv_convert_options()</a></code> </p>
-        </td>
-        <td><p>Conversion options for the CSV reader</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="csv_parse_options.html">csv_parse_options()</a></code> <code><a href="csv_parse_options.html">json_parse_options()</a></code> </p>
-        </td>
-        <td><p>Parsing options for Arrow file readers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="csv_read_options.html">csv_read_options()</a></code> <code><a href="csv_read_options.html">json_read_options()</a></code> </p>
-        </td>
-        <td><p>Read options for the Arrow file readers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="csv_table_reader.html">csv_table_reader()</a></code> <code><a href="csv_table_reader.html">json_table_reader()</a></code> </p>
-        </td>
-        <td><p>Arrow CSV and JSON table readers</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="ParquetFileReader.html">ParquetFileReader</a></code> </p>
         </td>
         <td><p>ParquetFileReader class</p></td>
@@ -264,9 +267,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="JsonTableReader.html">JsonTableReader</a></code> </p>
+          <p><code><a href="CsvTableReader.html">CsvTableReader</a></code> </p>
         </td>
-        <td><p>class JsonTableReader</p></td>
+        <td><p>Arrow CSV and JSON table reader classes</p></td>
       </tr><tr>
         
         <td>
@@ -279,6 +282,12 @@
           <p><code><a href="RecordBatchWriter.html">RecordBatchWriter</a></code> </p>
         </td>
         <td><p>RecordBatchWriter classes</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CsvReadOptions.html">CsvReadOptions</a></code> </p>
+        </td>
+        <td><p>File reader options</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -292,15 +301,13 @@
         <td>
           <p><code><a href="buffer.html">buffer()</a></code> </p>
         </td>
-        <td><p>class Buffer</p></td>
+        <td><p>Buffer class</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="array.html">array</a></code> </p>
         </td>
-        <td><p>class Array
-
-Array base type. Immutable data array with some logical type and some length.</p></td>
+        <td><p>Array class</p></td>
       </tr><tr>
         
         <td>
@@ -310,33 +317,21 @@ Array base type. Immutable data array with some logical type and some length.</p
       </tr><tr>
         
         <td>
-          <p><code><a href="chunked_array.html">chunked_array()</a></code> </p>
+          <p><code><a href="ChunkedArray.html">chunked_array()</a></code> </p>
         </td>
-        <td><p>Create a ChunkedArray from various R vectors</p></td>
+        <td><p>ChunkedArray class</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="chunked-array.html">chunked-array</a></code> </p>
+          <p><code><a href="RecordBatch.html">record_batch()</a></code> </p>
         </td>
-        <td><p>class ChunkedArray</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="record_batch.html">record_batch()</a></code> </p>
-        </td>
-        <td><p>Create an arrow::RecordBatch from a data frame</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="RecordBatch.html">RecordBatch</a></code> </p>
-        </td>
-        <td><p>class arrow::RecordBatch</p></td>
+        <td><p>RecordBatch class</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="Table.html">Table</a></code> </p>
         </td>
-        <td><p>class arrow::Table</p></td>
+        <td><p>Table class</p></td>
       </tr><tr>
         
         <td>
@@ -378,9 +373,9 @@ Array base type. Immutable data array with some logical type and some length.</p
       </tr><tr>
         
         <td>
-          <p><code><a href="Field.html">Field</a></code> <code><a href="Field.html">field()</a></code> </p>
+          <p><code><a href="Field.html">field()</a></code> </p>
         </td>
-        <td><p>class arrow::Field</p></td>
+        <td><p>Field class</p></td>
       </tr><tr>
         
         <td>
@@ -470,9 +465,9 @@ Array base type. Immutable data array with some logical type and some length.</p
       </tr><tr>
         
         <td>
-          <p><code><a href="compression_codec.html">compression_codec()</a></code> </p>
+          <p><code><a href="Codec.html">Codec</a></code> </p>
         </td>
-        <td><p>codec</p></td>
+        <td><p>Compression Codec class</p></td>
       </tr><tr>
         
         <td>
@@ -485,6 +480,24 @@ Array base type. Immutable data array with some logical type and some length.</p
           <p><code><a href="default_memory_pool.html">default_memory_pool()</a></code> </p>
         </td>
         <td><p>default arrow::MemoryPool</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="FileSystem.html">FileSystem</a></code> </p>
+        </td>
+        <td><p>FileSystem classes</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="FileStats.html">FileStats</a></code> </p>
+        </td>
+        <td><p>FileSystem entry stats</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Selector.html">Selector</a></code> </p>
+        </td>
+        <td><p>file selector</p></td>
       </tr>
     </tbody>
     </table>
@@ -510,7 +523,7 @@ Array base type. Immutable data array with some logical type and some length.</p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

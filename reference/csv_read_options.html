@@ -8,6 +8,13 @@
 
 <title>Read options for the Arrow file readers — csv_read_options • Arrow R Package</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -37,6 +44,7 @@
 
 <meta property="og:title" content="Read options for the Arrow file readers — csv_read_options" />
 <meta property="og:description" content="Read options for the Arrow file readers" />
+<meta property="og:image" content="https://arrow.apache.org/docs/r/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -86,10 +94,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
+  <a href="https://arrow.apache.org/">❯❯❯</a>
 </li>
 <li>
   <a href="../articles/arrow.html">Get started</a>
@@ -99,6 +104,36 @@
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Project docs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://arrow.apache.org/docs/format/README.html">Specification</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/c_glib">C GLib</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/cpp">C++</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/java">Java</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/js">JavaScript</a>
+    </li>
+    <li>
+      <a href="https://arrow.apache.org/docs/python">Python</a>
+    </li>
+    <li>
+      <a href="../index.html">R</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -131,7 +166,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>csv_read_options</span>(<span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fu'>option_use_threads</span>(),
-  <span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>, <span class='kw'>skip_rows</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>column_names</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(<span class='fl'>0</span>))
+  <span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>, <span class='kw'>skip_rows</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>column_names</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(<span class='fl'>0</span>),
+  <span class='kw'>autogenerate_column_names</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='fu'>json_read_options</span>(<span class='kw'>use_threads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>block_size</span> <span class='kw'>=</span> <span class='fl'>1048576L</span>)</pre>
 
@@ -156,7 +192,13 @@ must end with an empty line.</p></td>
       <th>column_names</th>
       <td><p>Character vector to supply column names. If length-0
 (the default), the first non-skipped row will be parsed to generate column
-names.</p></td>
+names, unless <code>autogenerate_column_names</code> is <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>autogenerate_column_names</th>
+      <td><p>Logical: generate column names instead of
+using the first non-skipped row (the default)? If <code>TRUE</code>, column names will
+be "f0", "f1", ..., "fN".</p></td>
     </tr>
     </table>
 
